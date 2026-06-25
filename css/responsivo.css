@@ -3,105 +3,247 @@
    ========================================================================== */
 @media (max-width: 768px) {
     
-    /* 1. Ajustes Gerais do App */
+    /* 1. AJUSTES GERAIS */
     body, html {
-        overflow-x: hidden; /* Garante que nada quebre para os lados */
+        overflow-x: hidden; /* Evita qualquer quebra ou rolagem lateral indesejada */
     }
 
-    /* 2. Ajuste do tamanho da Lua */
-    .header #lua {
-        width: 140px; /* Reduz a lua para não ocupar o ecrã todo */
-        height: auto;
-        margin-top: 20px;
+    /* 2. HEADER E ELEMENTOS DA NOITE */
+    .header {
+        height: 550px !important; /* Altura reduzida mais amigável para mobile */
     }
 
-    /* 3. Ajuste do Título Ondulado (Para não cortar as palavras) */
     .titulo-romantico, #titulo-onda {
-        font-size: 24px !important; /* Diminui a fonte da letra por letra */
-        line-height: 1.4;
+        font-size: 2.8rem !important; /* Ajuste proporcional para caber na tela */
+        line-height: 1.3;
         padding: 0 15px;
-        text-align: center;
+        display: flex !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important; /* Permite que letras quebrem linha se necessário */
     }
 
-    /* 4. Ajuste da Vitrola Fixa (Para não cobrir o texto no telemóvel) */
-    .vitrola-fixa {
-        top: 20px !important;
+    .subtitulo-romantico {
+        font-size: 1.2rem !important;
+        padding-right: 0 !important;
+        margin-top: 10px;
+    }
+
+    .tulipa-decoracao {
+        position: absolute; 
+        width: 55px !important;
+        top: -25px !important;
+        right: -10px !important;
+    }
+
+    .header #lua {
+        width: 110px !important; /* Diminui a lua para equilibrar com o título */
+        top: 40px !important;
         right: 20px !important;
-        transform: scale(0.85); /* Deixa o ícone levemente menor e mais sutil */
+    }
+
+    /* 3. VITROLA FIXA */
+    .vitrola-fixa {
+        top: 15px !important;
+        left: 15px !important;
+        width: 90px !important; /* Um pouco menor para não tampar conteúdos */
     }
 
     .musica-dica {
-        font-size: 11px;
+        font-size: 10px !important;
         white-space: nowrap;
     }
 
-    /* 5. Ajuste dos Cards do Carrossel */
-    .carrossel-container {
-        padding: 10px;
-        gap: 15px;
+    /* 4. SEÇÃO DECLARAÇÃO (Alinhamento Horizontal Perfeito) */
+    .declaracao {
+        flex-direction: column !important; /* Empilha a foto e os textos verticalmente */
+        align-items: center !important;    /* Centraliza absolutamente tudo na horizontal */
+        justify-content: center !important;
+        min-height: auto !important;
+        padding: 60px 20px !important;
     }
 
-    .card {
-        width: 85vw !important; /* O card passa a ocupar 85% da largura do ecrã do telemóvel */
-        max-width: 320px;
-        height: auto;
-        padding: 20px !important;
+    .imagem-wrapper {
+        margin-left: 0 !important; /* Remove o recuo negativo do computador */
+        width: 220px !important;   /* Tamanho perfeito da moldura das estrelas */
+        height: 220px !important;
+        margin-bottom: 35px !important; /* Espaço para respirar antes do texto */
+        flex-shrink: 0;
     }
 
-    /* 6. A SEÇÃO FINAL (Onde estão as fotos e a tulipa)
-       No PC fica lado a lado. No telemóvel, vamos empilhar uma abaixo da outra! */
-    .container-imagens-final {
-        display: block !important; /* Muda de flex para bloco para empilhar */
-        text-align: center;
-        width: 100%;
-        padding: 0 20px;
-        margin-top: 30px;
+    .nos {
+        width: 180px !important;   /* Deixa a foto circular interna proporcional */
+        height: 180px !important;
+        margin: 20px auto !important;
     }
 
-    /* Ajuste das Fotos Finais */
-    .wrapper-img-final {
+    .tnos {
+        margin-left: 0 !important; /* Remove o recuo negativo do computador */
         width: 100% !important;
-        max-width: 280px; /* Limita o tamanho máximo da foto */
-        height: 360px !important; /* Ajusta a altura proporcional */
-        margin: 20px auto !important; /* Centraliza e dá espaço entre elas */
-        display: inline-block;
-    }
-
-    /* Ajuste da Tulipa que fica no meio */
-    .wrapper-tulipa-central {
-        width: 160px !important; /* Diminui a tulipa para ficar delicada */
-        margin: 30px auto !important;
-        display: flex;
-        justify-content: center;
-    }
-
-    /* Ajuste das mensagens e frases finais */
-    .secao-final-surpresa h1 {
-        font-size: 28px !important;
         padding: 0 10px;
     }
 
+    .frase-principal {
+        font-size: 2.2rem !important; /* Fonte elegante legível no mobile */
+        line-height: 1.3;
+        margin-bottom: 15px !important;
+    }
+
+    .frase-detalhe {
+        font-size: 1.5rem !important;
+        line-height: 1.4;
+        max-width: 100% !important;
+    }
+
+    /* 5. CARROSSEL E CARDS (NOSSA GALERIA) */
+    .carrossel-container {
+        padding: 20px 15px !important;
+    }
+
+    .card {
+        width: 80vw !important; /* Ocupa quase toda a largura visível do telemóvel */
+        max-width: 290px !important;
+        margin-right: 15px !important;
+    }
+
+    .card-imagem {
+        height: 280px !important; /* Altura ideal da foto dentro do card */
+    }
+
+    .card-texto {
+        font-size: 1.2rem !important;
+    }
+
+    /* 6. SEÇÃO TULIPA GIGANTE */
+    .secao-tulipa-gigante {
+        flex-direction: column !important; /* Empilha imagem e texto */
+        min-height: auto !important;
+        padding: 50px 20px !important;
+    }
+
+    .tulipa-container-img {
+        transform: translateX(0) !important; /* Centraliza o bloco da imagem */
+        margin-bottom: 40px !important;
+        width: 100%;
+    }
+
+    .texto-peguei-ali {
+        left: 10% !important;
+        top: -35px !important;
+        font-size: 1.6rem !important;
+    }
+
+    .tulipa-img-grande {
+        max-width: 260px !important; /* Reduz a tulipa gigante para telas pequenas */
+    }
+
+    .tulipa-container-texto {
+        width: 100% !important;
+        padding: 25px !important;
+        border-radius: 25px !important; /* Bordas ligeiramente menores e mais suaves */
+    }
+
+    .texto-romantico-tulipa {
+        font-size: 1.6rem !important;
+        text-align: center !important; /* Texto centralizado no mobile */
+        line-height: 1.4;
+    }
+
+    /* 7. SEÇÃO CÓSMICA (Buraco Negro) */
+    .secao-cosmica {
+        flex-direction: column !important; /* Texto em cima, vídeo embaixo */
+        min-height: auto !important;
+    }
+
+    .cosmica-lado-esquerdo {
+        padding: 50px 20px 30px 20px !important;
+        text-align: center !important;
+    }
+
+    .frase-luz-principal {
+        font-size: 1.8rem !important;
+        margin-bottom: 15px !important;
+    }
+
+    .frase-luz-detalhe {
+        font-size: 1rem !important;
+    }
+
+    .cosmica-lado-direito {
+        width: 100% !important;
+        height: 250px !important; /* Define uma altura confortável para o vídeo no mobile */
+    }
+
+    .video-espacial {
+        /* Altera o efeito de máscara para sumir de baixo para cima, acompanhando o fluxo vertical */
+        -webkit-mask-image: linear-gradient(to top, transparent 0%, black 25%) !important;
+        mask-image: linear-gradient(to top, transparent 0%, black 25%) !important;
+    }
+
+    /* 8. SEÇÃO FINAL E SURPRESA */
+    .secao-final-surpresa {
+        padding: 60px 15px !important;
+    }
+
+    .container-frases-sequenciais {
+        margin-bottom: 40px !important;
+    }
+
     .frase-seq {
-        font-size: 16px !important;
-        margin: 15px auto !important;
-        width: 90%;
+        font-size: 1.2rem !important;
+        margin: 10px 0 !important;
+    }
+
+    .secao-final-surpresa h1, .titulo-universo-onda {
+        font-size: 2.2rem !important;
+        margin-bottom: 40px !important;
+        padding: 0 10px;
+    }
+
+    .container-imagens-final {
+        display: flex !important;
+        flex-direction: column !important; /* Empilha as fotos finais e a tulipa */
+        gap: 25px !important;
+        margin-top: 20px !important;
+    }
+
+    .wrapper-img-final {
+        width: 100% !important;
+        max-width: 240px !important; 
+        height: 310px !important; 
+        margin: 0 auto !important;
+    }
+
+    .wrapper-img-final.esquerda { transform: rotate(-3deg) !important; }
+    .wrapper-img-final.direita { transform: rotate(3deg) !important; }
+
+    .wrapper-tulipa-central {
+        width: 130px !important; 
+        margin: 10px auto !important;
     }
 }
 
 /* ==========================================================================
-   AJUSTES EXTRAS PARA TELEMÓVEIS MUITO PEQUENOS (Até 380px - Ex: iPhone SE)
+   AJUSTES EXTRAS PARA TELEMÓVEIS MUITO PEQUENOS (Até 380px de largura)
    ========================================================================== */
 @media (max-width: 380px) {
     .titulo-romantico, #titulo-onda {
-        font-size: 20px !important;
+        font-size: 2.3rem !important;
+    }
+
+    .frase-principal {
+        font-size: 1.9rem !important;
+    }
+
+    .frase-detalhe {
+        font-size: 1.3rem !important;
+    }
+
+    .texto-romantico-tulipa {
+        font-size: 1.4rem !important;
     }
 
     .wrapper-img-final {
-        max-width: 240px;
-        height: 310px !important;
-    }
-
-    .wrapper-tulipa-central {
-        width: 120px !important;
+        max-width: 200px !important;
+        height: 260px !important;
     }
 }
