@@ -1,0 +1,712 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sacramento&family=Satisfy&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+html, body {
+    background-color: #0b1d16;
+}
+
+/* --- HEADER --- */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    background-image: url('../img/noite3.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-titulo-container {
+    text-align: center;
+    color: white;
+    z-index: 5;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 
+                 0 0 20px rgba(168, 160, 255, 0.5);
+}
+
+.titulo-romantico {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+    margin-bottom: -15px;
+    letter-spacing: 5px;
+    display: flex; 
+    justify-content: center;
+}
+
+.titulo-romantico span {
+    display: inline-block; 
+    transform-origin: bottom;
+    animation: onda 2.5s infinite ease-in-out; 
+    animation-delay: calc(0.1s * var(--i)); 
+}
+
+@keyframes onda {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg); 
+        color: white;
+    }
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+        color: #FFC0CB;
+    }
+}
+
+.subtitulo-romantico {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    position: relative; 
+    padding-right: 20px;
+}
+
+.tulipa-decoracao {
+    position: absolute; 
+    width: 114px;
+    height: auto;
+    transform: rotate(35deg);
+    top: -40px;
+    right: 2px;
+    z-index: 10; 
+}
+
+.lua {
+    position: fixed;
+    top: 100px;
+    right: 200px;
+    width: 150px;
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity 0.1s ease;
+}
+
+.vitrola-fixa {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 120px;
+    height: auto;
+    cursor: pointer;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vitrola-img {
+    width: 100%;
+    height: auto;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.vitrola-img.active {
+    display: block;
+}
+
+.musica-dica {
+    color: white; 
+    font-size: 0.8em;
+    text-align: center;
+    margin-bottom: 5px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.03); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.declaracao {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start;
+    min-height: 700px;
+    background-color: black;
+    color: white;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.declaracao::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/mar.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.3; 
+    z-index: -1; 
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+}
+
+.imagem-wrapper {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    margin-left: -300px; 
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.nos {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 50%;
+    animation: rotacao-lenta 60s linear infinite; 
+    position: relative;
+    z-index: 2;
+}
+
+.tnos {
+    flex: 1;
+    margin-left: -50px;
+    z-index: 10;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: white; 
+    text-align: center;
+}
+
+.frase-principal {
+    font-size: 4.0rem;
+    font-family: 'Great Vibes', cursive;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    justify-self: center;
+}
+
+.frase-detalhe {
+    font-size: 2.2rem; /* Aumentado levemente para destacar a fonte Sacramento */
+    font-family: 'Sacramento', cursive;
+    line-height: 1.4;
+    max-width: 600px;
+    justify-self: center;
+}
+
+@keyframes rotacao-lenta {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.estrela {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8),
+                0 0 20px 5px rgba(168, 160, 255, 0.4);
+    opacity: 0;
+    z-index: 1;
+    animation: piscar 4s infinite ease-in-out;
+}
+
+@keyframes piscar {
+    0%, 100% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+.est1 { top: 10%; right: 15%; width: 8px; height: 8px; animation-delay: 0s; }
+.est2 { top: 25%; right: 0%; width: 12px; height: 12px; animation-delay: 1.5s; }
+.est3 { top: 50%; right: -5%; width: 6px; height: 6px; animation-delay: 0.5s; }
+.est4 { bottom: 25%; right: 0%; width: 10px; height: 10px; animation-delay: 2.5s; }
+.est5 { bottom: 10%; right: 15%; width: 7px; height: 7px; animation-delay: 1s; }
+.est6 { top: 15%; left: 30%; width: 9px; height: 9px; animation-delay: 3s; }
+.est7 { bottom: 20%; left: 40%; width: 5px; height: 5px; animation-delay: 0.2s; }
+.est8 { top: 45%; left: 25%; width: 11px; height: 11px; animation-delay: 1.8s; }
+
+/* --- TRANSITIONS --- */
+.passagem1 {
+    display: flex;
+    height: 100px;
+    background-image: linear-gradient(to bottom, #0a0533, black);
+    position: relative;
+}
+
+.scroll-prompt {
+    position: absolute; 
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white; 
+    font-size: 0.9em;
+    font-weight: 500;
+    opacity: 1;
+    transition: opacity 0.3s ease; 
+    z-index: 10;
+}
+
+.scroll-text {
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.seta-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.seta {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid white;
+    margin-top: 6px;
+    animation: bounce 1.5s infinite;
+}
+
+.seta:nth-child(2) { animation-delay: 0.2s; }
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-5px); }
+    60% { transform: translateY(-3px); }
+}
+
+.passagem2 {
+    display: flex;
+    min-height: 200px;
+    background-image: linear-gradient(to top, #0a0533, black);
+}
+
+.galeria-secao {
+    background-image: linear-gradient(to bottom, #0a0533, rgb(17, 131, 131));
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.galeria-titulo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    margin-bottom: 40px;
+    color: #c9dbd2;
+    text-shadow: 0 0 10px rgba(182, 245, 216, 0.4), 0 0 20px rgba(182, 245, 216, 0.2);
+    animation: flutuarTitulo 4s ease-in-out infinite;
+}
+
+@keyframes flutuarTitulo {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-7px); }
+}
+
+.galeria-titulo span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: surgirLetra 0.5s ease forwards;
+    animation-play-state: paused;
+}
+
+@keyframes surgirLetra {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.coracao {
+    position: absolute;
+    bottom: -30px;
+    font-size: 20px;
+    color: rgba(160, 255, 180, 0.7);
+    animation: subir-coracao linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes subir-coracao {
+    0% { transform: translateY(0) scale(1); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translateY(-800px) scale(1.4); opacity: 0; }
+}
+
+.brilho {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: rgba(200, 255, 220, 0.9);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(180, 255, 210, 0.9), 0 0 20px rgba(120, 255, 180, 0.6);
+    animation: piscar 4s infinite ease-in-out;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.carrossel-container {
+    max-width: 100vw;
+    margin: 0 auto;
+    padding: 40px 80px;
+    overflow-x: scroll;
+    overflow-y: visible;
+    cursor: grab;
+}
+
+.carrossel-container::-webkit-scrollbar {
+    display: none;
+}
+
+.carrossel {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    cursor: grab;
+    user-select: none;
+}
+
+.carrossel.active-dragging, .carrossel-container.active-dragging {
+    cursor: grabbing;
+}
+
+.card {
+    position: relative;
+    flex-shrink: 0;
+    width: 350px;
+    margin-right: 30px;
+    border-radius: 18px;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.card.active {
+    transform: scale(1.07);
+    transform-origin: center bottom;
+    z-index: 10;
+}
+
+.card.dimmed {
+    transform: scale(0.9);
+    opacity: 0.6;
+}
+
+.card-imagem {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+}
+
+.card-conteudo {
+    padding: 15px;
+}
+
+.card-texto {
+    font-family: 'Playfair Display', serif; 
+    font-style: italic; 
+    font-weight: 100;
+    font-size: 1.5rem;
+    margin: 0;
+    color: #FFFAFA;
+}
+
+.card, .card-imagem, .card-conteudo, .card-texto {
+    user-select: none; 
+    -webkit-user-select: none; 
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #41053c, #42044e);
+    border-radius: 20px;
+}
+
+.passagem3 {
+    display: flex;
+    min-height: 200px;
+    background-color: rgb(17, 131, 131);
+}
+
+.secao-tulipa-gigante {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 900px;
+    padding: 60px 20px;
+    background-color: rgb(17, 131, 131);
+    overflow: hidden;
+    position: relative;
+}
+
+.secao-tulipa-gigante::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/fundo-tulipas.jpg'); 
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7; 
+    z-index: 0; 
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    -webkit-mask-composite: initial;
+    mask-composite: intersect;
+}
+
+.tulipa-container-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    transform: translateX(-20px);
+    position: relative;
+    z-index: 2;
+}
+
+.texto-peguei-ali {
+    position: absolute;
+    top: -50px; 
+    left: 15%;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #ffffff;
+    transform: rotate(-15deg);
+    text-shadow: 0 0 10px rgba(255, 192, 203, 0.6);
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.tulipa-img-grande {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(255, 192, 203, 0.5));
+    animation: flutuarTulipa 5s ease-in-out infinite;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes flutuarTulipa {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+.tulipa-container-texto {
+    flex: 1;
+    padding: 40px;
+    text-align: left;
+    z-index: 2;
+    backdrop-filter: blur(1px); 
+    background: rgba(102, 104, 104, 0.151);
+    border-radius: 50px;
+}
+
+.texto-romantico-tulipa {
+    font-family: 'Playfair Display', serif; 
+    font-style: italic; 
+    font-weight: 600;
+    font-size: 3.2rem;
+    line-height: 1.4;
+    color: #f0ebec;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), 0 0 15px rgba(255, 192, 203, 0.3);
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.passagem4 {
+    display: flex;
+    min-height: 200px;
+    background-image: linear-gradient(to top, #00000000, rgb(17, 131, 131));
+}
+
+.secao-cosmica {
+    display: flex;
+    min-height: 1100px; 
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 15%);
+}
+
+.cosmica-lado-esquerdo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px;
+    z-index: 2;
+}
+
+.frase-luz-principal {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    color: #ffffff;
+    line-height: 1.3;
+    margin-bottom: 30px;
+    font-style: italic;
+    font-weight: 500;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.frase-luz-detalhe {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    color: #FFC0CB;
+    letter-spacing: 1.5px;
+    text-transform: lowercase;
+    opacity: 0.9;
+}
+
+.cosmica-lado-direito {
+    flex: 1.2;
+    position: relative;
+}
+
+.video-espacial {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%);
+    mask-image: linear-gradient(to right, transparent 0%, black 20%);
+}
+
+.passagem5 {
+    display: flex;
+    min-height: 200px;
+    background-image: linear-gradient(to top, #000000, rgb(0, 0, 0));
+}
+
+.secao-final-surpresa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom, #000000, #0a0533, rgb(17, 131, 131));
+}
+
+.container-frases-sequenciais {
+    text-align: center;
+    margin-bottom: 60px;
+    z-index: 5;
+}
+
+.frase-seq {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    color: #FFC0CB;
+    margin: 15px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: aparecerSuave 1.5s ease forwards;
+    animation-play-state: paused;
+}
+
+.fs1 { animation-delay: 0.5s; }
+.fs2 { animation-delay: 2.5s; }
+.fs3 { animation-delay: 4.5s; }
+
+@keyframes aparecerSuave {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.titulo-universo-onda {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+    text-align: center;
+    color: white;
+    margin-bottom: 80px;
+    line-height: 1.2;
+    z-index: 5;
+    text-shadow: 0 0 20px rgba(255, 192, 203, 0.5);
+}
+
+.titulo-universo-onda span {
+    display: inline-block;
+    transform-origin: bottom;
+    animation: onda 2.5s infinite ease-in-out;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+.container-imagens-final {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    z-index: 5;
+    margin-top: 50px;
+}
+
+.wrapper-tulipa-central {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    transition: transform 0.5s ease;
+    filter: drop-shadow(0 0 15px rgba(255, 192, 203, 0.6));
+}
+
+.wrapper-tulipa-central img {
+    width: 100%;
+    height: auto;
+    animation: flutuarTulipaCentral 3s ease-in-out infinite;
+}
+
+@keyframes flutuarTulipaCentral {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.wrapper-img-final {
+    width: 300px;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 3px solid rgba(255, 192, 203, 0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+.wrapper-img-final.esquerda { transform: rotate(-5deg); }
+.wrapper-img-final.direita { transform: rotate(5deg); }
+.wrapper-img-final:hover { transform: rotate(0deg) scale(1.05); z-index: 10; }
+
+.wrapper-img-final img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
