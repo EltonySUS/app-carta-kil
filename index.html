@@ -25,6 +25,13 @@
         <img src="img/lua.png" id="lua" class="lua" alt="Lua">
 
         <div class="header-titulo-container">
+            <div id="temporizador-namoro" class="temporizador-container">
+                Juntos há: <span id="tempo-contagem">A calcular...</span>
+            </div>
+
+            <h1 class="titulo-romantico" id="titulo-onda">
+                </h1>
+                <div class="header-titulo-container">
             <h1 class="titulo-romantico" id="titulo-onda">
                 <span style="--i:1">P</span>
                 <span style="--i:2">r</span>
@@ -40,6 +47,18 @@
                 <img src="img/tulipa.png" alt="Tulipa" class="tulipa-decoracao">
             </p>
         </div>
+        </div>
+
+        <div id="popup-aniversario" class="popup-oculto">
+            <div class="popup-conteudo">
+                <span class="popup-fechar" onclick="fecharPopup()">&times;</span>
+                <h2 class="popup-titulo">💖 Parabéns a Nós! 💖</h2>
+                <p id="popup-mensagem-meses"></p>
+                <p class="popup-subtexto">Te amo mais a cada dia!</p>
+            </div>
+        </div>
+
+        
     </header>
     
     <div class="passagem1">
@@ -100,6 +119,14 @@
                 <div class="card"><img src="img/foto16.jpg" alt="Foto 16" class="card-imagem"><div class="card-conteudo"><p class="card-texto">AMO SUAS FOTOS</p></div></div>
                 <div class="card"><img src="img/foto17.jpg" alt="Foto 17" class="card-imagem"><div class="card-conteudo"><p class="card-texto">Já disse que amo suas fotos?</p></div></div>
                 <div class="card"><img src="img/foto18.jpg" alt="Foto 18" class="card-imagem"><div class="card-conteudo"><p class="card-texto">Esse é o Lorde que conquistou essa linda princesa e fez esse presente com carinho!</p></div></div>
+                <div class="card"><img src="img/foto 19.jpeg" alt="Foto 19" class="card-imagem"><div class="card-conteudo"><p class="card-texto">Saiba que eu amei ir no mirage com você amor! Eu me diverti muito</p></div></div>
+                <div class="card"><img src="img/foto 20.jpeg" alt="Foto 20" class="card-imagem"><div class="card-conteudo"><p class="card-texto">Não consigo expressar em palavra o quanto é bom passar o tempo com você, ainda mais 3 dias consecutivos kaakak</p></div></div>
+                <div class="card"><img src="img/foto 21.jpeg" alt="Foto 21" class="card-imagem"><div class="card-conteudo"><p class="card-texto">O momento em que fomos no shopping e você tava tão fofinha e muito bonita meu amor, VOCÊ È LINDA AMOR!</p></div></div>
+                <div class="card"><img src="img/foto 22.jpeg" alt="Foto 22" class="card-imagem"><div class="card-conteudo"><p class="card-texto">Mais uma de nós dois no Miragem, eu realmente te amo MUITO! Somos perfeitos um para o outro</p></div></div>
+                <div class="card"><img src="img/foto 23.jpeg" alt="Foto 23" class="card-imagem"><div class="card-conteudo"><p class="card-texto">Nossa formatura que também foi algo que eu repetiria com certeza, e também porque foi ai que pedi minha princesa em namoro!!!</p></div></div>
+                <div class="card"><img src="img/foto 24.jpeg" alt="Foto 24" class="card-imagem"><div class="card-conteudo"><p class="card-texto">O meu Deus, obrigado por me dar esse presente de mulher!! EU AMO MUITO ELAAAA</p></div></div>
+                <div class="card"><img src="img/foto 25.jpeg" alt="Foto 25" class="card-imagem"><div class="card-conteudo"><p class="card-texto">Nós somos incrivelmente</p></div></div>
+                <div class="card"><img src="img/foto 26.jpeg" alt="Foto 26" class="card-imagem"><div class="card-conteudo"><p class="card-texto">Perfeitos Juntos!</p></div></div>
             </div>
         </div>
     </div>
@@ -173,5 +200,6 @@
     </div>
 
     <script src="js/lua.js"></script>
+    <script src="js/tempo.js"></script>
 </body>
 </html>

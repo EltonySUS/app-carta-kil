@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const alvo = secoesComEfeitos[Math.floor(Math.random() * secoesComEfeitos.length)];
         const coracao = document.createElement('span');
         coracao.classList.add('coracao');
-        coracao.innerHTML = '💚';
+        coracao.innerHTML = '❤';
         coracao.style.left = Math.random() * 100 + '%';
         coracao.style.animationDuration = (6 + Math.random() * 6) + 's';
         coracao.style.fontSize = (14 + Math.random() * 20) + 'px';
