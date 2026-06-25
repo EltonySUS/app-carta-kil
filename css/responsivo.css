@@ -10,7 +10,7 @@
 
     /* 2. HEADER E ELEMENTOS DA NOITE */
     .header {
-        height: 550px !important; /* Altura reduzida mais amigável para mobile */
+        height: 625px !important; /* Altura reduzida mais amigável para mobile */
     }
 
     .titulo-romantico, #titulo-onda {
