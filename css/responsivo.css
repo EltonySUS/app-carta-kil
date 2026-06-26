@@ -43,14 +43,9 @@
 
     /* 3. VITROLA FIXA */
     .vitrola-fixa {
-        top: 15px !important;
+        top: 55px !important;
         left: 15px !important;
         width: 90px !important; /* Um pouco menor para não tampar conteúdos */
-    }
-
-    .musica-dica {
-        font-size: 10px !important;
-        white-space: nowrap;
     }
 
     /* 4. SEÇÃO DECLARAÇÃO (Alinhamento Horizontal Perfeito) */

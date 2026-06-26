@@ -36,22 +36,64 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // --- 3. CONTROLE DE MÚSICA ---
-    const musica = new Audio('audio/ipanema.mp3'); 
-    musica.loop = true;
+    // --- 3. CONTROLE DE MÚSICA ATUALIZADO (SELETOR DE PLAYLIST) ---
+    let musicaAtual = null; 
     let isPlaying = false;
+    const menuMusicas = document.getElementById('menu-musicas');
+    const botoesMusica = document.querySelectorAll('.btn-musica');
+    const btnPausar = document.getElementById('btn-pausar-tudo');
 
     if (vitrolaContainer) {
-        vitrolaContainer.addEventListener('click', function() {
-            if (isPlaying) {
-                musica.pause();
-                vitrolaOn.classList.remove('active');
-                vitrolaOff.classList.add('active');
+        // Ao clicar na área da vitrola, abre/fecha o menu de opções
+        vitrolaContainer.addEventListener('click', function(e) {
+            // Impede fechar se estiver clicando nos botões de dentro do menu
+            if (e.target.closest('#menu-musicas')) return; 
+            
+            menuMusicas.classList.toggle('mostrar');
+        });
+
+        // Configuração para cada botão de música
+        botoesMusica.forEach(botao => {
+            botao.addEventListener('click', function() {
+                const caminhoAudio = this.getAttribute('data-src');
+
+                // Se houver uma música tocando, para ela antes de iniciar a nova
+                if (musicaAtual) {
+                    musicaAtual.pause();
+                }
+
+                // Cria o novo áudio selecionado
+                musicaAtual = new Audio(caminhoAudio);
+                musicaAtual.loop = true;
+
+                musicaAtual.play()
+                    .then(() => {
+                        isPlaying = true;
+                        vitrolaOff.classList.remove('active');
+                        vitrolaOn.classList.add('active'); // Liga a animação da vitrola
+                        menuMusicas.classList.remove('mostrar'); // Fecha o menu de escolha
+                    })
+                    .catch(error => console.error("Erro ao reproduzir faixa:", error));
+            });
+        });
+
+        // Botão de Pausar Tudo
+        if (btnPausar) {
+            btnPausar.addEventListener('click', function() {
+                if (musicaAtual) {
+                    musicaAtual.pause();
+                }
                 isPlaying = false;
-            } else {
-                musica.play().catch(error => console.error("Erro ao tocar música:", error)); 
-                vitrolaOff.classList.remove('active');
-                vitrolaOn.classList.add('active');
-                isPlaying = true;
+                vitrolaOn.classList.remove('active');
+                vitrolaOff.classList.add('active'); // Volta para a imagem estática
+                menuMusicas.classList.remove('mostrar');
+            });
+        }
+
+        // Fecha o menu se o utilizador clicar em qualquer outro lugar do site
+        document.addEventListener('click', function(e) {
+            if (!vitrolaContainer.contains(e.target)) {
+                menuMusicas.classList.remove('mostrar');
             }
         });
     }
@@ -141,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const alvo = secoesComEfeitos[Math.floor(Math.random() * secoesComEfeitos.length)];
         const coracao = document.createElement('span');
         coracao.classList.add('coracao');
-        coracao.innerHTML = '❤';
+        coracao.innerHTML = '💖';
         coracao.style.left = Math.random() * 100 + '%';
         coracao.style.animationDuration = (6 + Math.random() * 6) + 's';
         coracao.style.fontSize = (14 + Math.random() * 20) + 'px';

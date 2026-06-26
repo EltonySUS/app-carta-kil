@@ -16,9 +16,20 @@
 </head>
 <body>
     
-    <div id="vitrola-container" class="vitrola-fixa">
-        <img id="vitrola-off" class="vitrola-img active" src="img/vitrolasem.png" alt="Vitrola sem disco">
-        <img id="vitrola-on" class="vitrola-img" src="img/vitrolacom.png" alt="Vitrola tocando disco">
+    <div class="vitrola-fixa" id="vitrola-container">
+        <img src="img/vitrolasem.png" id="vitrola-off" class="vitrola-img active" alt="Vitrola Parada">
+        <img src="img/vitrolacom.png" id="vitrola-on" class="vitrola-img" alt="Vitrola Tocando">
+
+        <div id="menu-musicas" class="menu-musicas-oculto">
+            <p class="titulo-menu-musica">Escolha a nossa trilha: 💖</p>
+            <button class="btn-musica" data-src="audio/ipanema.mp3">Garota de Ipanema</button>
+            <button class="btn-musica" data-src="audio/alianca.mp3">Aliança</button>
+            <button class="btn-musica" data-src="audio/encontrei.mp3">Eu te encontrei</button>
+            <button class="btn-musica" data-src="audio/her.mp3">Her</button>
+            <button class="btn-musica" data-src="audio/pupila.mp3">Pupila</button>
+            <button class="btn-musica" data-src="audio/abrigo.mp3">Meu Abrigo</button>
+            <button class="btn-musica" id="btn-pausar-tudo">Pausar Música</button>
+        </div>
     </div>
 
     <header class="header">
@@ -137,7 +148,7 @@
         </div>
         <div class="tulipa-container-texto">
             <h2 class="texto-romantico-tulipa">
-                "Eu não sou ladrão, mas roubaria mais de mil tulipas pra ver você bem!."
+                "Eu não sou ladrão, mas roubaria mil tulipas pra ver você sorrindo!"
             </h2>
         </div>
     </div>
@@ -147,10 +158,10 @@
     <div class="secao-cosmica">
         <div class="cosmica-lado-esquerdo">
             <h2 class="frase-luz-principal">
-                "E se você fosse luz, não deixaria escapar nada de importante seu!"
+                "E se você fosse luz, não deixaria escapar nenhum fóton do seu brilho celestial!"
             </h2>
             <p class="frase-luz-detalhe">
-                o buraco negro consegue absorver luz e os dois ficam bonitos juntos
+                O buraco negro consegue absorver luz, se tornando o astro mais bonito do Universo
             </p>
         </div>
         
@@ -166,9 +177,9 @@
     
     <div class="secao-final-surpresa" id="secao-final">
         <div class="container-frases-sequenciais">
-            <p class="frase-seq fs1">Presente de Aniversário</p>
-            <p class="frase-seq fs2">Presente de Natal</p>
-            <p class="frase-seq fs3">E retribuição pela carta do Banguela</p>
+            <p class="frase-seq fs1">Presente</p>
+            <p class="frase-seq fs2">de</p>
+            <p class="frase-seq fs3">6 Meses de Namoro!!</p>
         </div>
 
         <h1 class="titulo-universo-onda">
