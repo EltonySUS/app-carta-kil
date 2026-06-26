@@ -876,3 +876,99 @@ html, body {
     background: #a82020;
     color: #fff;
 }
+
+.passagem6 {
+    display: flex;
+    min-height: 200px;
+    background-image: linear-gradient(to bottom, rgb(17, 131, 131),#0a0533);
+}
+
+/* --- SEÇÃO PRESENTES --- */
+.secao-presentes {
+    background-color:#0a0533; /* Mantém o fundo escuro romântico */
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.titulo-presentes {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    color: #ffffff;
+    margin-bottom: 60px;
+    text-shadow: 0 0 15px rgba(255, 192, 203, 0.4);
+}
+
+.presentes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.presentes-linha {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    width: 100%;
+}
+
+.presente-card {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.presente-img-wrapper {
+    width: 100%;
+    height: 320px; /* Mantém um formato quadrado perfeito */
+    border-radius: 20px;
+    overflow: hidden;
+    border: 3px solid rgba(255, 192, 203, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    
+    /* Ativa o movimento contínuo de cima para baixo */
+    animation: flutuarPresente 4.5s ease-in-out infinite;
+}
+
+/* Atrasos estratégicos para que não flutuem todos rigidamente ao mesmo tempo */
+.p-atraso1 .presente-img-wrapper { animation-delay: 0s; }
+.p-atraso2 .presente-img-wrapper { animation-delay: 1.2s; }
+.p-atraso3 .presente-img-wrapper { animation-delay: 2.4s; }
+
+.img-presente {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a foto preencha o espaço sem distorcer */
+    transition: transform 0.3s ease;
+}
+
+/* Efeito sutil de zoom ao passar o rato/tocar */
+.presente-card:hover .img-presente {
+    transform: scale(1.04);
+}
+
+.texto-presente {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #f0ebec;
+    margin-top: 20px; /* Garante que o texto fique bem posicionado embaixo */
+    line-height: 1.5;
+    max-width: 95%;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Animação que faz flutuar de cima para baixo */
+@keyframes flutuarPresente {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px); /* Deslocamento suave para cima no meio do ciclo */
+    }
+}
